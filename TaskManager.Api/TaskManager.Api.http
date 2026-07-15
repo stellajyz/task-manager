@@ -1,6 +1,36 @@
-@TaskManager.Api_HostAddress = http://localhost:5011
+@host = http://localhost:5011
 
-GET {{TaskManager.Api_HostAddress}}/weatherforecast/
+### 查看全部任务
+GET {{host}}/api/tasks
 Accept: application/json
 
-###
+### 创建任务
+POST {{host}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Apply for jobs",
+  "description": "Submit two job applications",
+  "dueDate": "2026-07-20"
+}
+
+### 查看 ID 为 1 的任务
+GET {{host}}/api/tasks/1
+Accept: application/json
+
+### 修改 ID 为 1 的任务
+PUT {{host}}/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Apply for graduate jobs",
+  "description": "Submit three applications",
+  "isCompleted": false,
+  "dueDate": "2026-07-22"
+}
+
+### 标记 ID 为 1 的任务完成
+PATCH {{host}}/api/tasks/1/complete
+
+### 删除 ID 为 1 的任务
+DELETE {{host}}/api/tasks/1
