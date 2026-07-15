@@ -1,0 +1,21 @@
+# .NET generated files
+**/bin/
+**/obj/
+
+# Node.js generated files
+**/node_modules/
+**/dist/
+
+# Environment variables
+.env
+.env.*
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# Editor and operating system files
+.vs/
+.DS_Store
+Thumbs.db
